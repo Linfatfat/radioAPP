@@ -3,6 +3,9 @@ package com.u1065115.radioapp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +16,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnOK(View view){
+        TextView txvLike = findViewById(R.id.txvShow);
+        RadioGroup kGrilGroup = findViewById(R.id.kGirlGroup);
+
+        int id =kGrilGroup.getCheckedRadioButtonId();
+        RadioButton selected = findViewById(id);
+
+        txvLike.setText("My favorite K Girl Group:"  + selected.getText() );
 
     }
 }
